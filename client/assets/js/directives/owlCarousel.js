@@ -31,9 +31,6 @@
 						owl = element.owlCarousel(scope.owlCarousel)
 					);
 
-					console.log(scope.owlCarousel);
-					console.log('owl : ',owl);
-
 				}
 
 			}
@@ -49,9 +46,11 @@
 				 */
 				vm.loadOwlCarousel = function () {
 
+					console.log('make a new slider');
+
 					$timeout(
 						$scope.loadOwlCarousel,
-						1000
+						2000
 					);
 				}
 

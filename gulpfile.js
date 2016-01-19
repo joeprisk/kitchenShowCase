@@ -46,13 +46,16 @@ var paths = {
   ],
   libsJs: [
     'bower_components/jquery/dist/jquery.js',
-    'bower_components/owl.carousel/dist/owl.carousel.js'
+    //'bower_components/owl.carousel/dist/owl.carousel.js'
+    'bower_components/angular-touch/angular-touch.js',
+    'bower_components/angular-carousel/dist/angular-carousel.js'
   ],
   // These files are for your app's JavaScript
   appJS: [
     'bower_components/angular-socket-io/socket.js',
 
-    'client/assets/js/directives/owlCarousel.js',
+    //'client/assets/js/directives/owlCarousel.js',
+    //'bower_components/angular-owl-carousel/src/angular-owl-carousel.js',
     'client/assets/js/ShowCaseController.js',
     'client/assets/js/app.js',
     'client/assets/js/SliderController.js',

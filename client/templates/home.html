@@ -1,9 +1,7 @@
-<div class="grid-container">
+<div class="slider-container">
 
-  <div class="owl-carousel owl-theme" data-owl-carousel="Slider.owlCarousel">
-    <div data-owl-carousel-item data-ng-repeat="item in Slider.images">
-      <img data-ng-src="/image/{{ item }}">
-    </div>
-  </div>
+  <ul rn-carousel rn-carousel-auto-slide="1" rn-carousel-buffered rn-carousel-transition="zoom">
+    <li data-ng-repeat="item in Slider.images"><img  data-ng-src="/image/{{ item }}"></li>
+  </ul>
 
 </div>

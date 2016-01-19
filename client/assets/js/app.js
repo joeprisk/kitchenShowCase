@@ -14,13 +14,13 @@
     'btford.socket-io',
 
     //  angular-owl-carousel
-    'angular-owl-carousel',
-
+    'angular-carousel',
     // controller namespace
     'ShowCase.controller'
   ])
     .config(config)
     .run(run)
+
   ;
 
   config.$inject = ['$stateProvider','$urlRouterProvider', '$locationProvider'];

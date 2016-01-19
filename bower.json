@@ -25,6 +25,8 @@
   "dependencies": {
     "foundation-apps": "~1.2.0",
     "angular-socket-io": "~0.7.0",
-    "owl.carousel": "*"
+    "owl.carousel": "*",
+    "angular-owl-carousel": "https://github.com/jonahbron/angular-owl-carousel.git#~0.2.3",
+    "angular-carousel": "~1.0.1"
   }
 }

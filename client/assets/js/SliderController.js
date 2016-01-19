@@ -2,8 +2,6 @@
 
 	'use strict';
 
-	console.log('something happened');
-
 	angular.module('ShowCase')
 		.controller('SliderController', SliderController);
 
@@ -18,9 +16,9 @@
 			loop:               true,
 			margin:             10,
 			nav:                true,
-			autoplay:           true,
-			navSpeed:           2000,
-			autoplaySpeed:      2000,
+			//autoplay:           true,
+			navSpeed:           500,
+			autoplaySpeed:      500,
 			autoplayHoverPause: true,
 			navText:            ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
 			responsive:         {
@@ -31,23 +29,17 @@
 					nav: true
 				},
 				1441: {
-					nav:    true,
-					items:  2,
-					center: true
+					nav:    true
 				}
 			}
 
 		};
 
-		vm.images = [1,2,56,4,45,6];
+		vm.images = [];
 
 		Socket.on('images', function(data) {
 
-			console.log(data);
-
 			angular.copy(data, vm.images);
 		});
-
-
 	}
 })();

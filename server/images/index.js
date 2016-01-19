@@ -1,5 +1,6 @@
 var fs = require('fs'),
-	Images = {};
+	Images = {},
+	config;
 
 Images.list = [];
 Images.load = load;
@@ -7,7 +8,7 @@ Images.random = random;
 
 function load() {
 
-	fs.readdir('/Users/joeprisk/Pictures', function (error, images) {
+	fs.readdir(config.imageDir, function (error, images) {
 
 		images.forEach(addImageToList);
 	});
@@ -43,4 +44,8 @@ function isImageString(imageString) {
 	}
 }
 
-module.exports = Images;
+module.exports = function(_config_) {
+
+	config = _config_;
+	return Images;
+}

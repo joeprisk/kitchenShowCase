@@ -1,3 +1,19 @@
 @import "settings";
 @import "foundation";
-@import "owl.carousel";
+@import "components/slider";
+
+.slider-container {
+
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.owl-carousel {
+
+    .owl-item {
+        object-fit:contain;
+    }
+}
