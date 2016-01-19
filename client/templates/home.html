@@ -1,9 +1,9 @@
----
-name: home
-url: /
----
-
 <div class="grid-container">
-  <h1>Welcome to Foundation for Apps!</h1>
-  <p class="lead">This is version <strong>1.2 Eiger</strong>.</p>
+
+  <div class="owl-carousel owl-theme" data-owl-carousel="Slider.owlCarousel">
+    <div data-owl-carousel-item data-ng-repeat="item in Slider.images">
+      <img data-ng-src="/image/{{ item }}">
+    </div>
+  </div>
+
 </div>

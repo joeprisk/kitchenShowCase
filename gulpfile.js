@@ -27,7 +27,9 @@ var paths = {
   // Sass will check these folders for files when you use @import.
   sass: [
     'client/assets/scss',
-    'bower_components/foundation-apps/scss'
+    'bower_components/foundation-apps/scss',
+    'bower_components/owl.carousel/src/scss'
+
   ],
   // These files include Foundation for Apps and its dependencies
   foundationJS: [
@@ -42,9 +44,19 @@ var paths = {
     'bower_components/foundation-apps/js/angular/**/*.js',
     '!bower_components/foundation-apps/js/angular/app.js'
   ],
+  libsJs: [
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/owl.carousel/dist/owl.carousel.js'
+  ],
   // These files are for your app's JavaScript
   appJS: [
-    'client/assets/js/app.js'
+    'bower_components/angular-socket-io/socket.js',
+
+    'client/assets/js/directives/owlCarousel.js',
+    'client/assets/js/ShowCaseController.js',
+    'client/assets/js/app.js',
+    'client/assets/js/SliderController.js',
+    'client/assets/js/Socket.js'
   ]
 }
 
@@ -116,7 +128,7 @@ gulp.task('sass', function () {
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
-gulp.task('uglify', ['uglify:foundation', 'uglify:app'])
+gulp.task('uglify', ['uglify:foundation', 'uglify:app', 'uglify:libs'])
 
 gulp.task('uglify:foundation', function(cb) {
   var uglify = $.if(isProduction, $.uglify()
@@ -142,6 +154,20 @@ gulp.task('uglify:app', function() {
     .pipe($.concat('app.js'))
     .pipe(gulp.dest('./build/assets/js/'))
   ;
+});
+
+gulp.task('uglify:libs', function() {
+  var uglify = $.if(isProduction, $.uglify()
+                                   .on('error', function (e) {
+                                     console.log(e);
+                                   }));
+
+  return gulp.src(paths.libsJs)
+             .pipe(uglify)
+             .pipe($.concat('libs.js'))
+             .pipe(gulp.dest('./build/assets/js/'))
+      ;
+
 });
 
 // Starts a test server, which you can view at http://localhost:8079

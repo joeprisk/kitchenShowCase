@@ -23,6 +23,8 @@
     "tests"
   ],
   "dependencies": {
-    "foundation-apps": "~1.2.0"
+    "foundation-apps": "~1.2.0",
+    "angular-socket-io": "~0.7.0",
+    "owl.carousel": "*"
   }
 }
