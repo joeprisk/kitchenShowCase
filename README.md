@@ -1,8 +1,4 @@
-# kitchen pi node script
-simple node script to close and re open chrome in kiosk mode
+# kitchen Show Case node app
 
-This code kills (savagely) all chrome instances, and reopens in kiosk mode.
+A node app to display image slider from a given directory and also overlay an iframed url that can be shared from elsewhere. The thinking is to share a recipe to be displayed on the kitchen wall
 
-used for a touch screen based pi to be able to share urls to in th kictehnad display a recipe on the screen
-
-more components coming soon

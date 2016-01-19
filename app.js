@@ -1,50 +1,18 @@
-var express    	= require("express"),
-	bodyParser 	= require("body-parser"),
-	app        	= express(),
-    exec  		= require('child_process').exec;
 
-//Here we are configuring express to use body-parser as middle-ware.
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+var config = require('./config'),
+	app    = require('./server/app')(config),
+	Images = require('./server/images'),
+	routes = require('./server/routes')(app, config),
+	server = require('http').createServer(app),
+	socket = require('./server/socket');
 
+Images.load(config);
 
-app.post('/openBrowser', function (request, response) {
-
-	var statusCode = 200;
-
-	try {
-
-		openBrowser(request.body.url);
-
-	} catch(e) {
-
-		statusCode = 500;
-
-	}
-
-	response.sendStatus(statusCode);
-
+server.listen(app.get('port'), function () {
+	console.log('Kitchen Pi is running on port ' + app.get('port'));
 });
 
-app.listen(3000);
+socket(server, Images, config);
 
-function openBrowser(url) {
 
-	if(!url) {
 
-		throw new Error;
-	}
-
-	// Fucking Die all chrome, go in with the sledge hammer
-	exec('killall -9 "Google Chrome"', function(error, stdout, stderr) {
-
-		console.log('chrome has been killed, time to reopen');
-
-		exec('open -a "Google Chrome" --args --kiosk ' + url, function(error, stdout, stderr) {
-
-			console.log('Chrome should have been opened');
-		});
-		// do nothing
-	});
-
-}
