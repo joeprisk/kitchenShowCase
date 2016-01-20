@@ -1,38 +1,66 @@
-var fs = require('fs'),
-	Images = {},
-	config;
+module.exports = function (_config_) {
 
-Images.list = [];
-Images.load = load;
+	var fs     = require('fs'),
+		Images = {},
+		config = _config_;
 
-function load() {
+	Images.list = [];
+	Images.load = load;
 
-	fs.readdir(config.imageDir, function (error, images) {
+	return Images;
 
-		images.forEach(addImageToList);
-	});
-}
+	/**
+	 * Load the images from within a folder into an array
+	 *
+	 * @param callback
+	 */
+	function load(callback) {
 
-function addImageToList(image) {
+		reset();
 
-	(isImageString(image)) && Images.list.push(image);
+		fs.readdir(
+			config.imageDir, function (error, files) {
 
-}
+				files.forEach(addImageToList);
 
-function isImageString(imageString) {
+				typeof callback == 'function' && callback();
+			}
+		);
+	}
 
-	if (imageString) {
+	/**
+	 * Add the string to the list if its an image
+	 *
+	 * @param image
+	 */
+	function addImageToList(image) {
 
-		var extensions = ['jpg', 'png', 'gif'],
-			extension = imageString.substr(imageString.length - 3);
-
-		return extensions.indexOf(extension) !== -1;
+		(
+			isImageString(image)
+		) && Images.list.push(image);
 
 	}
-}
 
-module.exports = function(_config_) {
+	/**
+	 * Make Sure that fileString is a string
+	 * then check for existence of image extention
+	 *
+	 * @param fileString
+	 * @returns {boolean}
+	 */
+	function isImageString(fileString) {
 
-	config = _config_;
-	return Images;
-}
+		fileString += "";
+
+		return (
+			/(jpg|gif|pngjpeg)$/.test(fileString.toLowerCase())
+		);
+
+	}
+
+	function reset() {
+
+		Images.list = [];
+	}
+
+};
