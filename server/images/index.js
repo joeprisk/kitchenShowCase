@@ -4,7 +4,6 @@ var fs = require('fs'),
 
 Images.list = [];
 Images.load = load;
-Images.random = random;
 
 function load() {
 
@@ -18,18 +17,6 @@ function addImageToList(image) {
 
 	(isImageString(image)) && Images.list.push(image);
 
-}
-
-function random() {
-
-	return '/image/' + Images.list[getRandomInt(0, Images.list.length - 1)];
-
-}
-
-
-function getRandomInt(min, max) {
-
-	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function isImageString(imageString) {
