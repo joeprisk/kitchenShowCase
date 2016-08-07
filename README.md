@@ -35,7 +35,7 @@ Install bower dependencies
 
 To run node server
  ```shell
- npm run sever
+ npm run server
  ```
 To run gulp foundation file watcher/builder
  ```shell

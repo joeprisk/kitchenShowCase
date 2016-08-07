@@ -13,8 +13,6 @@ module.exports = function(config) {
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(express.static(path.join(config.dirname, 'build')));
-	app.use(express.static(path.join(config.dirname, 'client')));
-	app.use(express.static(path.join(config.dirname, 'node_modules/')));
 
 	// development only
 	if ('development' == app.get('env')) {

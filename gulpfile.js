@@ -33,33 +33,14 @@ var paths = {
   ],
   // These files include Foundation for Apps and its dependencies
   foundationJS: [
-    'bower_components/fastclick/lib/fastclick.js',
-    'bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js',
-    'bower_components/tether/tether.js',
-    'bower_components/hammerjs/hammer.js',
-    'bower_components/angular/angular.js',
-    'bower_components/angular-animate/angular-animate.js',
-    'bower_components/angular-ui-router/release/angular-ui-router.js',
-    'bower_components/foundation-apps/js/vendor/**/*.js',
-    'bower_components/foundation-apps/js/angular/**/*.js',
-    '!bower_components/foundation-apps/js/angular/app.js'
+    
   ],
   libsJs: [
-    'bower_components/jquery/dist/jquery.js',
-    //'bower_components/owl.carousel/dist/owl.carousel.js'
-    'bower_components/angular-touch/angular-touch.js',
-    'bower_components/angular-carousel/dist/angular-carousel.js'
+    
   ],
   // These files are for your app's JavaScript
   appJS: [
-    'bower_components/angular-socket-io/socket.js',
-
-    //'client/assets/js/directives/owlCarousel.js',
-    //'bower_components/angular-owl-carousel/src/angular-owl-carousel.js',
-    'client/assets/js/ShowCaseController.js',
-    'client/assets/js/app.js',
-    'client/assets/js/SliderController.js',
-    'client/assets/js/Socket.js'
+    'client/assets/js/mediaPanel.js'
   ]
 }
 
@@ -153,7 +134,7 @@ gulp.task('uglify:app', function() {
     }));
 
   return gulp.src(paths.appJS)
-    .pipe(uglify)
+    // .pipe(uglify)
     .pipe($.concat('app.js'))
     .pipe(gulp.dest('./build/assets/js/'))
   ;

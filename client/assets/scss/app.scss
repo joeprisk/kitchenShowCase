@@ -1,19 +1,31 @@
-@import "settings";
-@import "foundation";
-@import "components/slider";
+.date-container {
 
-.slider-container {
-
-    position:fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
+    position:absolute;
+    font-size:2em;
+    top:1em;
+    left:1em;
+    z-index:2;
+    color:white;
 }
 
-.owl-carousel {
+.images {
 
-    .owl-item {
-        object-fit:contain;
+    img {
+
+        &.top {
+            z-index: 1;
+        }
+        &.bottom {
+            z-index: 0;
+        }
+
+        height: 100%;
+        width:100%;
+        position: absolute;
+        top: 0;
+        left:0;
+        object-fit: cover;
+
     }
 }
+

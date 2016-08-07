@@ -6,6 +6,7 @@ module.exports = function (_config_) {
 
 	Images.list = [];
 	Images.load = load;
+	Images.random = random;
 
 	return Images;
 
@@ -26,6 +27,13 @@ module.exports = function (_config_) {
 				typeof callback == 'function' && callback();
 			}
 		);
+	}
+
+	function random() {
+
+		var index = Math.floor(Math.random() * (Images.list.length));
+
+		return Images.list[index];
 	}
 
 	/**

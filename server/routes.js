@@ -1,15 +1,6 @@
 
-module.exports = function (app, config) {
+module.exports = function (app, config, Images) {
 //Routes
-	app.get('/', function (req, res) {
-
-		console.log('The url : ', req.url);
-		res.sendfile(config.dirname + '/public/index.html');
-	});
-
-	app.get('/remote', function (req, res) {
-		res.sendfile(config.dirname + '/public/remote.html');
-	});
 
 	app.get('/image/*', function (request, response) {
 
@@ -17,4 +8,9 @@ module.exports = function (app, config) {
 
 		response.sendfile(config.imageDir + urlName);
 	});
+
+	app.get('/image', function (request, response) {
+
+		response.send(JSON.stringify({url: '/image/' + Images.random()}));
+	})
 }

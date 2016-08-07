@@ -1,0 +1,110 @@
+{
+  "query": {
+    "count": 1,
+    "created": "2016-03-11T23:52:12Z",
+    "lang": "en-US",
+    "results": {
+      "channel": {
+        "title": "Yahoo! Weather - St. Agnes, GB",
+        "link": "http://us.rd.yahoo.com/dailynews/rss/weather/St._Agnes__GB/*http://weather.yahoo.com/forecast/UKXX1616_f.html",
+        "description": "Yahoo! Weather for St. Agnes, GB",
+        "language": "en-us",
+        "lastBuildDate": "Fri, 11 Mar 2016 10:58 pm GMT",
+        "ttl": "60",
+        "location": {
+          "city": "St. Agnes",
+          "country": "United Kingdom",
+          "region": ""
+        },
+        "units": {
+          "distance": "mi",
+          "pressure": "in",
+          "speed": "mph",
+          "temperature": "F"
+        },
+        "wind": {
+          "chill": "39",
+          "direction": "170",
+          "speed": "7"
+        },
+        "atmosphere": {
+          "humidity": "92",
+          "pressure": "30.06",
+          "rising": "2",
+          "visibility": "9.32"
+        },
+        "astronomy": {
+          "sunrise": "6:41 am",
+          "sunset": "6:19 pm"
+        },
+        "image": {
+          "title": "Yahoo! Weather",
+          "width": "142",
+          "height": "18",
+          "link": "http://weather.yahoo.com",
+          "url": "http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+        },
+        "item": {
+          "title": "Conditions for St. Agnes, GB at 10:58 pm GMT",
+          "lat": "50.31",
+          "long": "-5.2",
+          "link": "http://us.rd.yahoo.com/dailynews/rss/weather/St._Agnes__GB/*http://weather.yahoo.com/forecast/UKXX1616_f.html",
+          "pubDate": "Fri, 11 Mar 2016 10:58 pm GMT",
+          "condition": {
+            "code": "27",
+            "date": "Fri, 11 Mar 2016 10:58 pm GMT",
+            "temp": "43",
+            "text": "Mostly Cloudy"
+          },
+          "description": "\n<img src=\"http://l.yimg.com/a/i/us/we/52/27.gif\"/><br />\n<b>Current Conditions:</b><br />\nMostly Cloudy, 43 F<BR />\n<BR /><b>Forecast:</b><BR />\nFri - Mostly Cloudy. High: 49 Low: 42<br />\nSat - Cloudy. High: 51 Low: 41<br />\nSun - Sunny. High: 51 Low: 40<br />\nMon - Mostly Sunny. High: 46 Low: 41<br />\nTue - Partly Cloudy. High: 49 Low: 39<br />\n<br />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/St._Agnes__GB/*http://weather.yahoo.com/forecast/UKXX1616_f.html\">Full Forecast at Yahoo! Weather</a><BR/><BR/>\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)<br/>\n",
+          "forecast": [
+            {
+              "code": "27",
+              "date": "11 Mar 2016",
+              "day": "Fri",
+              "high": "49",
+              "low": "42",
+              "text": "Mostly Cloudy"
+            },
+            {
+              "code": "26",
+              "date": "12 Mar 2016",
+              "day": "Sat",
+              "high": "51",
+              "low": "41",
+              "text": "Cloudy"
+            },
+            {
+              "code": "32",
+              "date": "13 Mar 2016",
+              "day": "Sun",
+              "high": "51",
+              "low": "40",
+              "text": "Sunny"
+            },
+            {
+              "code": "34",
+              "date": "14 Mar 2016",
+              "day": "Mon",
+              "high": "46",
+              "low": "41",
+              "text": "Mostly Sunny"
+            },
+            {
+              "code": "30",
+              "date": "15 Mar 2016",
+              "day": "Tue",
+              "high": "49",
+              "low": "39",
+              "text": "Partly Cloudy"
+            }
+          ],
+          "guid": {
+            "isPermaLink": "false",
+            "content": "UKXX1616_2016_03_15_7_00_GMT"
+          }
+        }
+      }
+    }
+  }
+}

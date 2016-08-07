@@ -2,10 +2,8 @@
 var config = require('./config'),
 	app    = require('./server/app')(config),
 	Images = require('./server/images')(config),
-	routes = require('./server/routes')(app, config),
-	server = require('http').createServer(app),
-	socket = require('./server/socket'),
-	io = socket(server, Images, config);
+	routes = require('./server/routes')(app, config, Images),
+	server = require('http').createServer(app);
 
 Images.load();
 
